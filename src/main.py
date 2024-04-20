@@ -41,6 +41,7 @@ Select a mode:
         if mode == "a":
             pass
             # add()
+            # TODO: Implement add function
         elif mode == "f":
             find()
         elif mode == "q":
@@ -51,7 +52,7 @@ Select a mode:
 
 
 # def add():
-
+# TODO: Implement add function
 
 def find():
     mappath = input("Enter the name of the map: ")
@@ -59,6 +60,7 @@ def find():
     paklist = mapf.pakfile.namelist()
     foundassets = search(paklist)
     print(f"Found {len(foundassets)} assets")
+    # TODO: Add credits generator and declarer.
 
 
 def search(paklist):
@@ -73,6 +75,7 @@ def search(paklist):
             for path in asset_paths:
                 if path in paklist:
                     print(foundassets)
+                    # TODO: Figure out how to check if the asset is already in the list
                     if path not in foundassets:
                         print(f"Found {path}")
                         foundassets.append(jsonassets[i])
