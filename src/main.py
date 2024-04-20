@@ -1,16 +1,17 @@
 import os
 import sys
 import time
+import json
 
 from tqdm import tqdm
-from srctools import game as srcgame, bsp
-import json
+from srctools import bsp
 
 jsonFolder = os.path.join(os.getcwd(), 'Assets')
 jsonassets = []
 
 
 def init():
+    """Searches asset folder for asset configs, and adds the file path to a list."""
     print("Searching for json files...")
     jsonlist = os.listdir(jsonFolder)
     pbar = tqdm(range(len(jsonlist)))
@@ -29,6 +30,7 @@ def init():
 
 
 def start():
+    """Starting UI to select a mode."""
     print(
         """Welcome to Kenzo's Awesome Credits Checker!
 Select a mode:
@@ -55,6 +57,7 @@ Select a mode:
 # TODO: Implement add function
 
 def find():
+    """Searches for assets in a map."""
     mappath = input("Enter the name of the map: ")
     mapf = bsp.BSP(f"D:/Steam/steamapps/common/Portal 2/portal2/maps/{mappath}.bsp")
     paklist = mapf.pakfile.namelist()
@@ -64,24 +67,28 @@ def find():
 
 
 def search(paklist):
+    """Searches for assets in asset configs and checks if they are in the map."""
     foundassets = []
     print("Searching for assets...")
     pbar = tqdm(range(len(jsonassets)))
     for i in pbar:
         pbar.set_description(f"Searching {jsonassets[i]}")
-        with open(jsonassets[i], 'r') as f:
+        with open(jsonassets[i], 'r', encoding="json") as f:
             json_obj = json.load(f)
             asset_paths = json_obj['assetPaths']
             for path in asset_paths:
                 if path in paklist:
                     print(foundassets)
                     # TODO: Figure out how to check if the asset is already in the list
+                    # FIXME: first item in jsonassets[i] not being appended to foundassets
                     if path not in foundassets:
                         print(f"Found {path}")
                         foundassets.append(jsonassets[i])
     return foundassets
 
+
 def clear():
+    """Natively clears the console."""
     if os.name == "nt":
         os.system("cls")
     elif os.name == "posix":
