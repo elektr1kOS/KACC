@@ -1,4 +1,5 @@
 # Kenzo's Awesome Credits Checker!
+[![Super-Linter](https://github.com/TotallyKenzo/KACC/actions/workflows/<WORKFLOW_FILE_NAME>/badge.svg)](https://github.com/marketplace/actions/super-linter)
 *By TotallyKenzo*
 
 > [!IMPORTANT]
