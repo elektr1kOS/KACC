@@ -2,8 +2,7 @@ import os
 import time
 
 from tqdm import tqdm
-from srctools import bsp
-from srctools import game as srcgame
+from srctools import game as srcgame, bsp
 import json
 import zipfile
 
