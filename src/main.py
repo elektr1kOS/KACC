@@ -1,10 +1,10 @@
 import os
+import sys
 import time
 
 from tqdm import tqdm
 from srctools import game as srcgame, bsp
 import json
-import zipfile
 
 jsonFolder = os.path.join(os.getcwd(), 'Assets')
 jsonassets = []
@@ -45,7 +45,7 @@ Select a mode:
         elif mode == "f":
             find()
         elif mode == "q":
-            quit()
+            sys.exit()
     else:
         clear()
         start()
