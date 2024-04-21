@@ -1,5 +1,5 @@
 # Kenzo's Awesome Credits Checker!
-[![Super-Linter](https://github.com/TotallyKenzo/KACC/actions/workflows/linter.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![Super-Linter](https://github.com/TotallyKenzo/KACC/actions/workflows/super-linter.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 *By TotallyKenzo*
 
