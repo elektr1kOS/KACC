@@ -37,5 +37,5 @@ jobs:
         pytest
     - name: Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v5
-    - name: OpenCommit — improve commits with AI 🧙
-      uses: di-sukharev/opencommit@github-action-v1.0.2
+    # - name: OpenCommit — improve commits with AI 🧙
+    #  uses: di-sukharev/opencommit@github-action-v1.0.2
