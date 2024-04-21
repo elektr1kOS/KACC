@@ -64,6 +64,8 @@ def find():
                 
             if askyesno('Credits file is ready', 'Would you like to open the credits file in the default program?'):
                 os.startfile(credits_save_file)
+                
+        progressbar.config(value=0)
         
 isJson = lambda f: os.path.splitext(f)[1] == '.json'
 
