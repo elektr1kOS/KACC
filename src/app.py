@@ -87,14 +87,14 @@ def find():
         with open(foundassets[i], 'r', encoding="UTF-8") as f:
             json_obj = json.load(f)
             # Check credit type. 0 is Don't credit, 1 is preferred, 2 is required.
-            if json_obj['creditType'] != "0":
-                if json_obj['creditType'] == "1":
+            if json_obj['creditType'] != "none":
+                if json_obj['creditType'] == "optional":
                     # Keeps looping until a valid input is given.
                     while manualcredit not in ['y', 'n', 'yes', 'no']:
                         manualcredit = input(f"""Looks like {json_obj['assetName']} has the credit type set to preferred.
                         Would you like to credit {json_obj['assetAuthor']}? [Y/N]""").lower()
                 # If user decides to credit, or the asset is required.
-                if manualcredit in ['y', 'yes'] or json_obj['creditType'] == "2":
+                if manualcredit in ['y', 'yes'] or json_obj['creditType'] == "required":
                     creditlist.append(foundassets[i])
     # TODO: Implement credit list generation.
 
