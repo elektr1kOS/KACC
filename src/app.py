@@ -8,7 +8,7 @@ from tqdm import tqdm
 from srctools import bsp
 from tkinter import filedialog as fd
 
-jsonFolder = os.path.join(os.path.dirname(os.getcwd()), 'Assets')
+jsonFolder = os.path.join(os.getcwd(), 'Assets')
 jsonassets = []
 
 

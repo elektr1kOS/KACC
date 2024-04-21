@@ -10,7 +10,7 @@ import os
 
 win = Window('KACC (GUI version)', 'darkly')
 
-jsonFolder = os.path.join(os.path.dirname(os.getcwd()), 'Assets')
+jsonFolder = os.path.join(os.getcwd(), 'Assets')
 jsonassets = []
 
 def find() -> list:
