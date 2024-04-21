@@ -95,8 +95,17 @@ def find():
                         Would you like to credit {json_obj['assetAuthor']}? [Y/N]""").lower()
                 # If user decides to credit, or the asset is required.
                 if manualcredit in ['y', 'yes'] or json_obj['creditType'] == "required":
-                    creditlist.append(foundassets[i])
-    # TODO: Implement credit list generation.
+                    creditlist.append(json_obj)
+                    
+    credits = ''
+    
+    for file in creditlist:
+        credits += f'{file["assetName"]} by {file["assetAuthor"]}\n'
+        
+    credits_save_file = fd.asksaveasfilename(confirmoverwrite=True, defaultextension='.txt', filetypes=[('Plain text file', '.txt')])
+    if credits_save_file:
+        with open(credits_save_file, 'w') as crfile:
+            crfile.write(credits)
 
 def search(paklist):
     """Searches for assets in asset configs and checks if they are in the map."""
