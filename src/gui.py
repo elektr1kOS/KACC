@@ -37,8 +37,16 @@ def start_search():
 progressbar = Progressbar(win, length = 200, style=(STRIPED, INFO))
 progressbar.pack(side=BOTTOM, expand=True, fill=X, anchor=S, padx=5, pady=5)
 
+def add():
+    #TODO: implement add
+    raise NotImplementedError('TODO: implement add()')
+
 button_panel = Frame(win)
-button_panel.pack(side=LEFT, fill)
-add_asset_button = Button()
+button_panel.pack(side=LEFT, fill=Y, expand=True, anchor=W, padx=5, pady=5)
+add_asset_button = Button(button_panel, text='Add asset', command = add)
+add_asset_button.pack(side=TOP, padx=5, pady=5, expand=True)
+
+find_asset_button = Button(button_panel, text = 'Find asset', command = find)
+find_asset_button.pack(side=TOP, expand=True, padx=5, pady=5)
 
 win.mainloop()
