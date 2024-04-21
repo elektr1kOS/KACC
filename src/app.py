@@ -6,8 +6,9 @@ import json
 
 from tqdm import tqdm
 from srctools import bsp
+from tkinter import filedialog as fd
 
-jsonFolder = os.path.join(os.getcwd(), 'Assets')
+jsonFolder = os.path.join(os.getcwd(), "..", 'Assets')
 jsonassets = []
 
 
@@ -59,12 +60,9 @@ Select a mode:
 
 def find():
     """Searches for assets in a map."""
-    mappath = input("Enter the name of the map: ")
-    mapf = bsp.BSP(f"D:/Steam/steamapps/common/Portal 2/portal2/maps/{mappath}.bsp")
+    mapf = bsp.BSP(fd.askopenfilename())
     paklist = mapf.pakfile.namelist()
     foundassets = search(paklist)
-    print(f"Found {len(foundassets)} assets")
-    # TODO: Add credits generator and declarer.
 
 
 def search(paklist):
@@ -74,17 +72,14 @@ def search(paklist):
     pbar = tqdm(range(len(jsonassets)))
     for i in pbar:
         pbar.set_description(f"Searching {jsonassets[i]}")
-        with open(jsonassets[i], 'r', encoding="json") as f:
+        with open(jsonassets[i], 'r', encoding="UTF-8") as f:
             json_obj = json.load(f)
             asset_paths = json_obj['assetPaths']
             for path in asset_paths:
-                if path in paklist:
-                    print(foundassets)
-                    # TODO: Figure out how to check if the asset is already in the list
-                    # FIXME: first item in jsonassets[i] not being appended to foundassets
-                    if path not in foundassets:
-                        print(f"Found {path}")
-                        foundassets.append(jsonassets[i])
+                if path in paklist and jsonassets[i] not in foundassets:
+                    time.sleep(.1)
+                    print(f"Found {json_obj['assetName']}")
+                    foundassets.append(jsonassets[i])
     return foundassets
 
 
