@@ -1,0 +1,35 @@
+{
+  "creditformats":
+  {
+    "namebyauthor":
+    {
+      "displayName": "\"Asset Name\" by \"Author Name\"",
+      "format": "{assetname} by {authorname}"
+    },
+    "name-author":
+    {
+      "displayName": "\"Asset Name\" - \"Author Name\"",
+      "format": "{assetname} - {authorname}"
+    },
+    "author-name":
+    {
+      "displayName": "\"Author Name\" - \"Asset Name\"",
+      "format": "{authorname} - {assetname}"
+    },
+    "author":
+    {
+      "displayName": "\"Author Name\"",
+      "format": "{authorname}"
+    },
+    "name":
+    {
+      "displayName": "\"Asset Name\"",
+      "format": "{assetname}"
+    },
+    "author(name)":
+    {
+      "displayName": "\"Author Name\" (\"Asset Names\")",
+      "format": "{authorname} ({assetname})"
+    }
+  }
+}
