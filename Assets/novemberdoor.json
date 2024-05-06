@@ -1,12 +1,13 @@
 {
     "assetName": "Enhanced Test Chamber Door Materials",
     "assetAuthor": "November",
-    "assetDesc": "Enhanced the material of the default door, adding phong, envmaps, normals, deactive-active-off light skins, & a dirty variant. \nfeel free to modify or base things off it \nyou may repackage or re-release any of my assets",
+    "assetDesc": "Enhanced the material of the default door, adding phong, envmaps, normals, deactive-active-off light skins, & a dirty variant. \n \n feel free to modify or base things off it \n you may repackage or re-release any of my assets",
     "assetPaths": [
         "materials/models/props/portal_door_combined_new.vmt",
         "models/props/portal_door_combined_new.mdl",
         "models/props/portal_door_combined_new_backwards_anim.mdl"
     ],
     "creditType": "optional",
+    "assetVersion": "1.0",
     "assetURL": "https://discord.com/channels/262311619428614144/890411163777634317/1059512766769139864"
 }
