@@ -49,6 +49,7 @@ jobs:
             Assets/=build/Assets/
           include-data-files: |
             config.json=build/config.json
+          macos-create-app-bundle: true
 
 
       - name: Upload Artifacts
