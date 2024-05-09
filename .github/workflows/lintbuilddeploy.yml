@@ -37,7 +37,7 @@ jobs:
         uses: Nuitka/Nuitka-Action@main
         with:
           nuitka-version: main
-          script-name: kacc
+          script-name: kacc.py
           standalone: true
           onefile: false
           enable-plugins: tk-inter
