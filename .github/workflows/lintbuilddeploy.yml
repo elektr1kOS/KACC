@@ -45,11 +45,12 @@ jobs:
           enable-plugins: tk-inter
           disable-console: true
           include-data-dir: |
-            res/=build/res/
-            Assets/=build/Assets/
+            res/=res/
+            Assets/=Assets/
           include-data-files: |
-            config.json=build/config.json
+            config.json=config.json
           macos-create-app-bundle: true
+          remove-output: true
 
 
       - name: Upload Artifacts
