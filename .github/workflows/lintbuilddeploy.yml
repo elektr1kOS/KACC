@@ -39,11 +39,12 @@ jobs:
           nuitka-version: main
           script-name: kacc
           standalone: true
+          onefile: false
           enable-plugins: tk-inter
           disable-console: true
           include-data-dir: |
-            res/
-            Assets/
+            res/=res/
+            Assets/=Assets/
           include-data-files: |
             config.json
 
@@ -53,7 +54,7 @@ jobs:
         with:
           name: ${{ runner.os }} Build
           path: |
-            kacc.dist/*
+            build/*
             
       - uses: marvinpinto/action-automatic-releases@latest
         with:
@@ -62,4 +63,4 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            kacc.dist/*
+            build/*
