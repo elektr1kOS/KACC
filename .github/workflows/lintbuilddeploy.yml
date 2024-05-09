@@ -43,10 +43,10 @@ jobs:
           enable-plugins: tk-inter
           disable-console: true
           include-data-dir: |
-            res/=res/
-            Assets/=Assets/
+            res/=build/res/
+            Assets/=build/Assets/
           include-data-files: |
-            config.json
+            config.json=build/config.json
 
 
       - name: Upload Artifacts
